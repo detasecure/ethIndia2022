@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ResultData from "../data/ResultData";
 const listResult = () => {
-
   return (
     <div className="mx-auto max-w-5xl">
       <div className="flex flex-col ">
   <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div className="overflow-hidden"></div>
-      <table className="table-auto border-spacing-1">
-        <thead className="bg-white border-b">
-          <tr>
+      <table className="table-auto border-spacing-1 rounded-t-md">
+        <thead className="bg-purple-600 border-b rounded-t-[4rem]">
+          <tr className="rounded-t-md">
             <th className="text-sm font-medium text-gray-900 px-6 py-4 text-left">Name</th>
             <th className="text-sm font-medium text-gray-900 px-6 py-4 text-left">Email</th>
             <th className="text-sm font-medium text-gray-900 px-6 py-4 text-left">ENS</th>
@@ -21,7 +20,7 @@ const listResult = () => {
         <tbody>
           {
             ResultData.data.emails.map((res, index) => (
-              <tr className="bg-gray-100 border-b" key={index}>
+              <tr className={`${index %2==0 ?"bg-gray-100" : "bg-white" } border-b`} key={index}>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{res.first_name + res.last_name}</td>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{res.value}</td>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{res.ens_id}</td>
