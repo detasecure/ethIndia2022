@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useAccount } from "wagmi";
 import { ConnectKitButton } from "connectkit";
-import Charts from "../components/Charts";
 import { KeyboardEvent, useState } from "react";
 export default function Home() {
   const [userState, setUserState] = useState("");

@@ -12,13 +12,21 @@ const data = [
 ];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const RADIAN = Math.PI / 180;
-
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+interface renderProps {
+  cx:number
+  cy:number
+  innerRadius:number
+  outerRadius:number
+  percent:number
+  index:number
+  midAngle:number
+}
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }:renderProps) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + 1.4*radius * Math.cos(-midAngle * RADIAN);
   const y = cy + 1.4*radius * Math.sin(-midAngle * RADIAN);
   return (
-    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+    <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   );
@@ -26,9 +34,8 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 
   return (
-    <div>
-
-      <PieChart width={250} height={250} style={{backgroundColor: "#ff0000"}}>
+    <div className='mx-4'>
+      <PieChart width={260} height={260} style={{paddingLeft: "12px"}}>
         <Pie
           data={data}
           cx={120}
