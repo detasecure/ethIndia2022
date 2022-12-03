@@ -31,11 +31,14 @@ export default function Home() {
         and here goes some more text
       </h1>
 
-      <div className=" flex flex-col gap-4">
+      <div className=" flex flex-col gap-2">
+        <h1 className="text-center text-3xl font-bold  font-mono bg-clip-text text-transparent bg-gradient-to-r  from-orange-500 to-purple-500  ">
+          Countinue as
+        </h1>
         {isConnected ? (
-          <div className="flex gap-4 text-lg items-center">
+          <div className="flex gap-4 text-lg items-center justify-center">
             <div
-              className={` rounded-3xl px-12 py-6  text-3xl cursor-pointer  p-2 ${
+              className={` rounded-3xl px-12 py-3 hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
                 userState === "investor"
                   ? `bg-violet-500 `
                   : `opacity-50 bg-gray-500`
@@ -48,7 +51,7 @@ export default function Home() {
               Investor
             </div>
             <div
-              className={` rounded-3xl px-12 py-6  text-3xl cursor-pointer p-2 ${
+              className={` rounded-3xl px-12 py-3  hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
                 userState === "company"
                   ? `bg-violet-500`
                   : `opacity-50 bg-gray-500`
@@ -74,13 +77,6 @@ export default function Home() {
             );
           }}
         </ConnectKitButton.Custom>
-
-        {/* <ConnectKitButton
-          label="Connet you Wallet"
-          customTheme={"w-[300px]"}
-          showAvatar
-          showBalance
-        /> */}
       </div>
 
       {/* <div className="flex gap-3 justify-center ">
