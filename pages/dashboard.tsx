@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import CardBarChart from '../components/dashboard/CardBarChart'
-import RadarChart from '../components/dashboard/RadarChart'
-import WalletList from '../components/dashboard/WalletList'
 import Stats from "../components/dashboard/Stats";
 import { useRouter } from "next/router";
 import _data from "../components/dashboard/sample.json";
-
+import CardBarChart from '../components/dashboard/CardBarChart'
+import RadarChart from '../components/dashboard/RadarChart'
+import WalletList from '../components/dashboard/WalletList'
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
