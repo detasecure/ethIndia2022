@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Charts from '../components/dashboard/Charts'
+import CardBarChart from '../components/dashboard/CardBarChart'
+import RadarChart from '../components/dashboard/RadarChart'
 import Stats from '../components/dashboard/Stats'
-
+import WalletList from '../components/dashboard/WalletList'
 const dashboard = () => {
 
     const [loaded, setLoaded] = useState(false)
@@ -11,10 +12,13 @@ const dashboard = () => {
     },[])
 
   return (
-    <div className='flex flex-col items-center justify-center w-screen h-screen text-gray-800 p-10 bg-gray-200'>
-      
+    <div className='grid grid-cols-3 items-center justify-center w-[70%] p-10 gap-4 mx-auto'>
+      {loaded ? <RadarChart /> : ""}
+      <div className='col-span-2'>
+      {loaded ? <WalletList /> : ""}
+      </div>
+      {loaded ? <CardBarChart /> : ""}
       {loaded ? <Stats value={24} /> : ""}
-      {loaded ? <Charts /> : ""}
     </div>
   )
 }
