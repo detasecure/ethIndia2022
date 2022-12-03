@@ -1,65 +1,59 @@
-import React from 'react'
-interface propsDef{
-    value: number
-}
-const Stats = (props:propsDef) => {
-    const {value} = props
+import React from "react";
+
+const Stats = () => {
   return (
-    <body>
-	{/* <!-- Component Start --> */}
-	<div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 w-full max-w-6xl">
-		
-		{/* <!-- Tile 1 --> */}
-		<div className="flex items-center p-4 bg-white rounded">
-			<div className="flex flex-shrink-0 items-center justify-center bg-green-200 h-16 w-16 rounded">
-				
-			</div>
-			<div className="flex-grow flex flex-col ml-4">
-				<span className="text-xl font-bold">{value}</span>
-				<div className="flex items-center justify-between">
-					<span className="text-gray-500">Revenue last 30 days</span>
-					<span className="text-green-500 text-sm font-semibold ml-2">+12.6%</span>
-				</div>
-			</div>
-		</div>
-		
-		{/* <!-- Tile 2 --> */}
-		<div className="flex items-center p-4 bg-white rounded">
-			<div className="flex flex-shrink-0 items-center justify-center bg-red-200 h-16 w-16 rounded">
-				<svg className="w-6 h-6 fill-current text-red-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-				  <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-				</svg>
-			</div>
-			<div className="flex-grow flex flex-col ml-4">
-				<span className="text-xl font-bold">211</span>
-				<div className="flex items-center justify-between">
-					<span className="text-gray-500">Sales last 30 days</span>
-					<span className="text-red-500 text-sm font-semibold ml-2">-8.1%</span>
-				</div>
-			</div>
-		</div>
-		
-		{/* <!-- Tile 3 --> */}
-		<div className="flex items-center p-4 bg-white rounded">
-			<div className="flex flex-shrink-0 items-center justify-center bg-green-200 h-16 w-16 rounded">
-				<svg className="w-6 h-6 fill-current text-green-700"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-				  <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-				</svg>
-			</div>
-			<div className="flex-grow flex flex-col ml-4">
-				<span className="text-xl font-bold">140</span>
-				<div className="flex items-center justify-between">
-					<span className="text-gray-500">Customers last 30 days</span>
-					<span className="text-green-500 text-sm font-semibold ml-2">+28.4%</span>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-	{/* <!-- Component End  --> */}
+    <div className="flex  gap-6 w-full justify-center ]">
+      {/* <!-- Tile 1 --> */}
+      <div className="flex items-center p-4  rounded-xl bg-gray-900 mix-blend-lighten shadow-xl shadow-cyan-500/30 w-[400px] ">
+        <div className="flex flex-shrink-0 items-center justify-center  h-16 w-16 rounded">
+          <img
+            src={
+              "https://img.freepik.com/free-icon/user_318-928335.jpg?t=st=1670090890~exp=1670091490~hmac=be67c1f2b5827acf7f68055f6e60fdb36f175e184c47a263449f39eec4d20729"
+            }
+          />
+        </div>
+        <div className="flex-grow flex flex-col ml-4">
+          <span className="text-2xl font-bold">Total Accounts Retrived</span>
+          <span className="text-indigo-500 text-2xl	font-bold  ">1000</span>
+        </div>
+      </div>
 
-</body>
-  )
-}
+      {/* <!-- Tile 2 --> */}
+      <div className="flex items-center p-4  rounded-xl bg-gray-900 mix-blend-lighten shadow-xl shadow-cyan-500/30 w-[400px] ">
+        <div className="flex flex-shrink-0 items-center justify-center  h-16 w-16 rounded">
+          <img
+            src={
+              "https://img.freepik.com/free-icon/bitcoin_318-937535.jpg?t=st=1670091060~exp=1670091660~hmac=6241a45a4b84d1c15461db4bb0f7b61862f7ec07232ef5e96edcba7fd9a28d17"
+            }
+          />
+        </div>
+        <div className="flex-grow flex flex-col ml-4">
+          <span className="text-2xl font-bold">Total Addresses Retrived</span>
+          <span className="text-indigo-500 text-2xl	font-bold  ">400</span>
+        </div>
+      </div>
 
-export default Stats
+      <div className="flex items-center p-4  rounded-xl bg-gray-900 mix-blend-lighten shadow-xl shadow-cyan-500/30 w-[400px] ">
+        <div className="flex flex-shrink-0 items-center justify-center  h-16 w-16 rounded">
+          <img src={"./account.svg"} />
+        </div>
+        <div className="flex-grow flex flex-col ml-4">
+          <span className="text-2xl font-bold">Sus Accounts</span>
+          <span className="text-indigo-500 text-2xl	font-bold  ">20</span>
+        </div>
+      </div>
+
+      <div className="flex items-center p-4  rounded-xl bg-gray-900 mix-blend-lighten shadow-xl shadow-cyan-500/30 w-[400px] ">
+        <div className="flex flex-shrink-0 items-center justify-center  h-16 w-16 rounded">
+          <img src={"./account.svg"} />
+        </div>
+        <div className="flex-grow flex flex-col ml-4">
+          <span className="text-2xl font-bold">Sus Addresses</span>
+          <span className="text-indigo-500 text-2xl	font-bold  ">18</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Stats;

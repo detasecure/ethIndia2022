@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import Charts from '../components/dashboard/Charts'
-import Stats from '../components/dashboard/Stats'
+import React, { useEffect, useState } from "react";
+import Charts from "../components/dashboard/Charts";
+import Stats from "../components/dashboard/Stats";
 
 const dashboard = () => {
+  const [loaded, setLoaded] = useState(false);
 
-    const [loaded, setLoaded] = useState(false)
-
-    useEffect(() => {
-        setLoaded(true)
-    },[])
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   return (
-    <div className='flex flex-col items-center justify-center w-screen h-screen text-gray-800 p-10 bg-gray-200'>
-      
-      {loaded ? <Stats value={24} /> : ""}
+    <div className="flex flex-col gap-4 items-center  h-screen ">
+      {loaded ? <Stats /> : ""}
       {loaded ? <Charts /> : ""}
     </div>
-  )
-}
+  );
+};
 
-export default dashboard
+export default dashboard;

@@ -1,59 +1,82 @@
-import { NextPage } from 'next';
-import React from 'react'
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { NextPage } from "next";
+import React from "react";
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
 
-const Charts:NextPage = () => {
+const Charts: NextPage = () => {
+  const data = [
+    { name: "Group A", value: 400 },
+    { name: "Group B", value: 300 },
+    { name: "Group C", value: 300 },
+    { name: "Group D", value: 200 },
+  ];
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+  const RADIAN = Math.PI / 180;
+  interface renderProps {
+    cx: number;
+    cy: number;
+    innerRadius: number;
+    outerRadius: number;
+    percent: number;
+    index: number;
+    midAngle: number;
+  }
+  const renderCustomizedLabel = ({
+    cx,
+    cy,
+    midAngle,
+    innerRadius,
+    outerRadius,
+    percent,
+    index,
+  }: renderProps) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + 1.4 * radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + 1.4 * radius * Math.sin(-midAngle * RADIAN);
+    return (
+      <text
+        x={x}
+        y={y}
+        fill="white"
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+      >
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
 
-const data = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-const RADIAN = Math.PI / 180;
-interface renderProps {
-  cx:number
-  cy:number
-  innerRadius:number
-  outerRadius:number
-  percent:number
-  index:number
-  midAngle:number
-}
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }:renderProps) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + 1.4*radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + 1.4*radius * Math.sin(-midAngle * RADIAN);
   return (
-    <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  );
-}
-
-
-  return (
-    <div className='mx-4'>
-      <PieChart width={260} height={260} style={{paddingLeft: "12px"}}>
-        <Pie
-          data={data}
-          cx={120}
-          cy={120}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          paddingAngle={5}
-          dataKey="value"
-          label={renderCustomizedLabel}
+    <div className="flex justify-around w-full mt-6 gap-6 px-28  rounded-xl ">
+      <div className="mix-blend-lighten shadow-xl bg-gray-900 rounded-xl shadow-cyan-500/30">
+        <PieChart
+          width={600}
+          height={600}
+          className="text-center p-10 flex justify-center"
+        >
+          <Pie
+            data={data}
+            cx={280}
+            cy={280}
+            innerRadius={180}
+            outerRadius={200}
+            fill="#8884d8"
+            paddingAngle={5}
+            dataKey="value"
+            label={renderCustomizedLabel}
           >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
-        </Pie>
-      </PieChart>
-          </div>
-  )
-}
+          </Pie>
+        </PieChart>
+      </div>
 
-export default Charts
+      <div className="mix-blend-lighten shadow-xl w-full bg-gray-900 rounded-xl shadow-cyan-500/30"></div>
+    </div>
+  );
+};
+
+export default Charts;
