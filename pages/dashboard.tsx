@@ -3,7 +3,6 @@ import CardBarChart from '../components/dashboard/CardBarChart'
 import RadarChart from '../components/dashboard/RadarChart'
 import Stats from '../components/dashboard/Stats'
 import WalletList from '../components/dashboard/WalletList'
-import Charts from "../components/dashboard/Charts";
 
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
