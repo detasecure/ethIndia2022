@@ -1,13 +1,17 @@
 import { NextPage } from "next";
 import React from "react";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
-
+import Data from "../dashboard/sample.json";
+const acc = Data.meta.results;
+const wal = Data.meta.results;
+const h_w = Data.meta.high_risk_wallet_count;
+const h_a = Data.meta.high_risk_people;
 const Charts: NextPage = () => {
   const data = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 },
+    { name: "Group A", value: acc },
+    { name: "Group B", value: wal },
+    { name: "Group C", value: h_w },
+    { name: "Group D", value: h_a },
   ];
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
   const RADIAN = Math.PI / 180;
@@ -48,6 +52,7 @@ const Charts: NextPage = () => {
   return (
     <div className="flex justify-around w-full mt-6 gap-6 px-28  rounded-xl ">
       <div className="mix-blend-lighten shadow-xl bg-gray-900 rounded-xl shadow-cyan-500/30">
+        <h1 className="text-center text-xl py-4">Data Distribion</h1>
         <PieChart
           width={600}
           height={600}
@@ -57,7 +62,7 @@ const Charts: NextPage = () => {
             data={data}
             cx={280}
             cy={280}
-            innerRadius={180}
+            innerRadius={150}
             outerRadius={200}
             fill="#8884d8"
             paddingAngle={5}
