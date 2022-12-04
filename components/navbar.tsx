@@ -17,7 +17,6 @@ export const Navbar: React.FC = () => {
       <div>Niche 🌱</div>
       {/* <button onClick={handleOnClick}>Subercribe</button> */}
       {/* <div>Nicheeee</div> */}
-      <OptIn />
     </div>
   );
 };

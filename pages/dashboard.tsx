@@ -5,6 +5,7 @@ import _data from "../components/dashboard/sample.json";
 import CardBarChart from '../components/dashboard/CardBarChart'
 import RadarChart from '../components/dashboard/RadarChart'
 import WalletList from '../components/dashboard/WalletList'
+import OptIn from "../components/OptIn";
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
@@ -28,9 +29,10 @@ const dashboard = () => {
       </div>
       <div className="flex gap-4 my-5 justify-center">
         {" "}
-        <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
+        {/* <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
           Subscribe with Push
-        </div>
+        </div> */}
+        <OptIn />
         <div
           onClick={() => {
             router.push("/list");

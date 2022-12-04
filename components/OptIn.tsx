@@ -47,7 +47,11 @@ const OptIn = () => {
 
   return (
     <div>
-        <button onClick={optingIn} className=" bg-slate-700 text-white font-medium text-xl w-48 p-4 rounded-md">Subscribe</button>
+        {/* <button onClick={optingIn} className=" bg-slate-700 text-white font-medium text-xl w-48 p-4 rounded-md">Subscribe</button> */}
+
+        <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer" onClick={optingIn}>
+          Subscribe with Push
+        </div>
     </div>
   )
 }
