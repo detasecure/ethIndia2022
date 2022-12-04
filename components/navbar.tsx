@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <div className="flex justify-between p-3 text-3xl px-5  ">
-      <div>_someText</div>
+      <div>Niche 🌱</div>
     </div>
   );
 };
