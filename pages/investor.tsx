@@ -7,7 +7,7 @@ const Investor: React.FC = () => {
   //   <OptIn />
   return <div className="mx-auto">
     {/* <OptIn /> */}
-  <SendNotification />
+  {/* <SendNotification /> */}
 
   </div>;
 };
