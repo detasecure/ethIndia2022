@@ -34,7 +34,7 @@ const sendNoti = async () => {
 
 // sendNoti();
 
-export default function sendNotification(req, res) {
+export default function sendNotification(req:any, res:any) {
   // fetchens()
   sendNoti();
   res.status(200).json({ name: "Rahat" });
