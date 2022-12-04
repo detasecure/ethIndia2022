@@ -1,17 +1,59 @@
-import React, { useEffect, useState, PureComponent } from "react";
-import Charts from "../components/dashboard/Charts";
+import React, { useEffect, useState } from "react";
 import Stats from "../components/dashboard/Stats";
 import { useRouter } from "next/router";
 import _data from "../components/dashboard/sample.json";
+import Charts from "../components/dashboard/Charts";
+
+import * as PushAPI from "@pushprotocol/restapi";
+import { useAccount, useSigner } from "wagmi";
+import { toast } from "react-toastify";
 
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
+  const { address, isConnected } = useAccount();
+  const { data: signer, isError, isLoading } = useSigner();
 
   useEffect(() => {
     setLoaded(true);
   }, []);
-
+  async function optingIn() {
+    await PushAPI.channels.subscribe({
+      signer: signer,
+      channelAddress: "eip155:5:0x3871501819066e22032493d3FDFfc540d71365f1", // channel address in CAIP
+      userAddress: `eip155:5:${address}`, // user address in CAIP
+      onSuccess: () => {
+        console.log("opt in success");
+        const notify = () =>
+          toast("Subscribed Successfully!!!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        notify();
+      },
+      onError: () => {
+        const notify = () =>
+          toast("Oppsieeee there's soemthing wrong!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        notify();
+      },
+      env: "staging",
+    });
+  }
   return (
     <>
       <h1 className="my-4 font-bold text-6xl text-center">
@@ -27,7 +69,10 @@ const dashboard = () => {
       </div>
       <div className="flex gap-4 my-5 justify-center">
         {" "}
-        <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
+        <div
+          onClick={optingIn}
+          className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer"
+        >
           Subscribe with Push
         </div>
         <div
