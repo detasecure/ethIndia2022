@@ -32,38 +32,40 @@ export default function Home() {
       </h1>
 
       <div className=" flex flex-col gap-2">
-        <h1 className="text-center text-3xl font-bold  font-mono bg-clip-text text-transparent bg-gradient-to-r  from-orange-500 to-purple-500  ">
-          Countinue as
-        </h1>
         {isConnected ? (
-          <div className="flex gap-4 text-lg items-center justify-center">
-            <div
-              className={` rounded-3xl px-12 py-3 hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
-                userState === "investor"
-                  ? `bg-violet-500 `
-                  : `opacity-50 bg-gray-500`
-              }`}
-              onClick={() => {
-                setUserState("investor");
-                router.push("/investor");
-              }}
-            >
-              Investor
+          <>
+            <h1 className="text-center text-3xl font-bold  font-mono bg-clip-text text-transparent bg-gradient-to-r  from-orange-500 to-purple-500  ">
+              Countinue as
+            </h1>
+            <div className="flex gap-4 text-lg items-center justify-center">
+              <div
+                className={` rounded-3xl px-12 py-3 hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
+                  userState === "investor"
+                    ? `bg-violet-500 `
+                    : `opacity-50 bg-gray-500`
+                }`}
+                onClick={() => {
+                  setUserState("investor");
+                  router.push("/dashboard");
+                }}
+              >
+                Investor
+              </div>
+              <div
+                className={` rounded-3xl px-12 py-3  hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
+                  userState === "company"
+                    ? `bg-violet-500`
+                    : `opacity-50 bg-gray-500`
+                }`}
+                onClick={() => {
+                  setUserState("company");
+                  router.push("/dashboard");
+                }}
+              >
+                Company
+              </div>
             </div>
-            <div
-              className={` rounded-3xl px-12 py-3  hover:bg-gradient-to-r  hover:from-orange-500 hover:to-purple-500 text-2xl hover:opacity-100 cursor-pointer  p-2 ${
-                userState === "company"
-                  ? `bg-violet-500`
-                  : `opacity-50 bg-gray-500`
-              }`}
-              onClick={() => {
-                setUserState("company");
-                router.push("/company");
-              }}
-            >
-              Company
-            </div>
-          </div>
+          </>
         ) : null}
         <ConnectKitButton.Custom>
           {({ isConnected, isConnecting, show, hide, address, ensName }) => {
