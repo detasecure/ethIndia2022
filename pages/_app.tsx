@@ -18,6 +18,9 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { ConnectKitProvider, getDefaultClient } from "connectkit";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
   publicProvider(),
 ]);
@@ -60,6 +63,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <WagmiConfig client={client}>
         <ConnectKitProvider>
           <Navbar />
+          <ToastContainer />
           <Component {...pageProps} />
         </ConnectKitProvider>
       </WagmiConfig>

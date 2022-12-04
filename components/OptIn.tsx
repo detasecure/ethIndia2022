@@ -2,6 +2,7 @@ import React from 'react'
 import { useWeb3React } from "@web3-react/core";
 import * as PushAPI from "@pushprotocol/restapi";
 import { useAccount, useContract, useSigner } from 'wagmi'
+import { toast } from 'react-toastify';
 
 const OptIn = () => {
     const { address, isConnected } = useAccount()
@@ -15,9 +16,30 @@ const OptIn = () => {
             userAddress: `eip155:5:${address}`, // user address in CAIP
             onSuccess: () => {
              console.log('opt in success');
+             const notify = () => toast("Subscribed Successfully!!!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
+            notify()
             },
             onError: () => {
-              console.error('opt in error');
+                const notify = () => toast("Oppsieeee there's soemthing wrong!", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+                notify()
             },
             env: 'staging'
           })
@@ -25,7 +47,7 @@ const OptIn = () => {
 
   return (
     <div>
-        <button onClick={optingIn} className="w-24 p-2 bg-slate-700 text-white font-medium text-xl">Subscribe</button>
+        <button onClick={optingIn} className=" bg-slate-700 text-white font-medium text-xl w-48 p-4 rounded-md">Subscribe</button>
     </div>
   )
 }
