@@ -22,13 +22,12 @@ export default function Home() {
   return (
     <div className="h-[80vh] place-items-center grid overflow-hidden">
       <h1 className="inline text-5xl px-10 text-center font-sans">
-        Here is some text that explains about out project. some good lines. and
-        here is some{" "}
+        Real time people and wallet monitoring for suspicious and fraudulent
+        activities in the company{" "}
         <span className="font-mono italic font-bold animate-[loop_3s_linear_infinite] delay-75 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-violet-500 to-pink-500 bg-[200%] ">
           {" "}
-          keyword explaination
+          ~ Proof of Reserve
         </span>{" "}
-        and here goes some more text
       </h1>
 
       <div className=" flex flex-col gap-2">
