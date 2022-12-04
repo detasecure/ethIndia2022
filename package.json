@@ -17,6 +17,7 @@
     "@types/axios": "^0.14.0",
     "axios": "^1.2.0",
     "@pushprotocol/restapi": "^0.2.2",
+    "@web3-react/core": "^6.1.9",
     "chart.js": "^4.0.1",
     "connectkit": "^1.1.0",
     "eslint": "8.28.0",
