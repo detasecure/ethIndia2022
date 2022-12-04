@@ -1,0 +1,69 @@
+{
+  "data": {
+    "address": "0xf7e078144f29efef971ec33334ea5017c4fb4f3d",
+    "updated_at": "2022-12-04T01:06:06.230797417Z",
+    "next_update_at": "2022-12-04T01:11:06.230797488Z",
+    "quote_currency": "USD",
+    "chain_id": 1,
+    "items": [
+      {
+        "contract_decimals": 18,
+        "contract_name": "Ether",
+        "contract_ticker_symbol": "ETH",
+        "contract_address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "supports_erc": null,
+        "logo_url": "https://www.covalenthq.com/static/images/icons/display-icons/ethereum-eth-logo.png",
+        "last_transferred_at": "2022-12-03T16:29:11Z",
+        "native_token": true,
+        "type": "cryptocurrency",
+        "balance": "12434909506902947",
+        "balance_24h": "24580717639867091",
+        "quote_rate": null,
+        "quote_rate_24h": null,
+        "quote": 0.0,
+        "quote_24h": null,
+        "nft_data": null
+      },
+      {
+        "contract_decimals": 18,
+        "contract_name": "Dai Stablecoin",
+        "contract_ticker_symbol": "DAI",
+        "contract_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "supports_erc": ["erc20"],
+        "logo_url": "https://logos.covalenthq.com/tokens/1/0x6b175474e89094c44da98b954eedeac495271d0f.png",
+        "last_transferred_at": "2022-11-25T00:26:47Z",
+        "native_token": false,
+        "type": "stablecoin",
+        "balance": "0",
+        "balance_24h": "0",
+        "quote_rate": null,
+        "quote_rate_24h": null,
+        "quote": 0.0,
+        "quote_24h": null,
+        "nft_data": null
+      },
+      {
+        "contract_decimals": 18,
+        "contract_name": "Gitcoin",
+        "contract_ticker_symbol": "GTC",
+        "contract_address": "0xde30da39c46104798bb5aa3fe8b9e0e1f348163f",
+        "supports_erc": ["erc20"],
+        "logo_url": "https://logos.covalenthq.com/tokens/1/0xde30da39c46104798bb5aa3fe8b9e0e1f348163f.png",
+        "last_transferred_at": "2022-11-19T23:58:47Z",
+        "native_token": false,
+        "type": "cryptocurrency",
+        "balance": "3514167641557221071",
+        "balance_24h": "3514167641557221071",
+        "quote_rate": null,
+        "quote_rate_24h": null,
+        "quote": 0.0,
+        "quote_24h": null,
+        "nft_data": null
+      }
+    ],
+    "pagination": null
+  },
+  "error": false,
+  "error_message": null,
+  "error_code": null
+}
