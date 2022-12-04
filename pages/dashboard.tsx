@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Charts from "../components/dashboard/Charts";
 import Stats from "../components/dashboard/Stats";
+import { useRouter } from "next/router";
 import _data from "../components/dashboard/sample.json";
 
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setLoaded(true);
@@ -28,7 +30,12 @@ const dashboard = () => {
         <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
           Subscribe with Push
         </div>
-        <div className="rounded-xl bg-indigo-500 px-5 py-3 cursor-pointer">
+        <div
+          onClick={() => {
+            router.push("/list");
+          }}
+          className="rounded-xl bg-indigo-500 px-5 py-3 cursor-pointer"
+        >
           {" "}
           See Details
         </div>
