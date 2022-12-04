@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, PureComponent } from "react";
 import Charts from "../components/dashboard/Charts";
 import Stats from "../components/dashboard/Stats";
 import { useRouter } from "next/router";
