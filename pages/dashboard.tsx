@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Charts from "../components/dashboard/Charts";
+import React, { useEffect, useState } from 'react'
 import Stats from "../components/dashboard/Stats";
 import { useRouter } from "next/router";
 import _data from "../components/dashboard/sample.json";
 
+import CardBarChart from '../components/dashboard/CardBarChart'
+import RadarChart from '../components/dashboard/RadarChart'
+import WalletList from '../components/dashboard/WalletList'
+import OptIn from "../components/OptIn";
 const dashboard = () => {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
@@ -27,9 +30,10 @@ const dashboard = () => {
       </div>
       <div className="flex gap-4 my-5 justify-center">
         {" "}
-        <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
+        {/* <div className="rounded-xl bg-pink-400 px-5 py-3 cursor-pointer">
           Subscribe with Push
-        </div>
+        </div> */}
+        <OptIn />
         <div
           onClick={() => {
             router.push("/list");
@@ -42,7 +46,8 @@ const dashboard = () => {
       </div>
       <div className="flex flex-col gap-4 items-center  h-screen ">
         {loaded ? <Stats /> : ""}
-        {loaded ? <Charts /> : ""}
+        {/* {loaded ? <Charts /> : ""} */}
+        {/* {loaded ? <Charts /> : ""} */}
       </div>
     </>
   );
