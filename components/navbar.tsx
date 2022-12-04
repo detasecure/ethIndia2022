@@ -5,16 +5,7 @@ import { useRouter } from "next/router";
 import OptIn from "./OptIn";
 
 
-const handleOnClick = async () => {
-  try{
-    const res = await fetch('/api/optin')
-    const data = await res.json()
-    console.log(data)
-      }
-      catch(e){
 
-      }
-    }
   
 export const Navbar: React.FC = () => {
   const router = useRouter();
@@ -24,7 +15,9 @@ export const Navbar: React.FC = () => {
       {/* <div>Nicheeee</div> */}
       {/* <OptIn /> */}
       <div>Niche 🌱</div>
-      <button onClick={handleOnClick}>Subercribe</button>
+      {/* <button onClick={handleOnClick}>Subercribe</button> */}
+      {/* <div>Nicheeee</div> */}
+      <OptIn />
     </div>
   );
 };
